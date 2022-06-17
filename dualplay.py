@@ -1,6 +1,7 @@
 import sys
 import random
 import time
+from tkinter import FALSE
 
 from constant import HEIGHT, RestartGameDual, WIDTH, GAMETICK, MODULO_SCREEN_TWO_PLAYER, Orientation
 
@@ -101,10 +102,9 @@ class Player:
         for i in range(len(self.state)):
             for i2 in range(len(self.state)):
                 if i != i2 and self.state[i]['x'] == self.state[i2]['x'] and self.state[i]['y'] == self.state[i2]['y']:
-                    return False
-        for i in range(len(self.state)):
+                    return FALSE
             for i2 in range(len(PlayerT.state)):
-                if self.state[i]['x'] == PlayerT.state[i2]['x'] and self.state[i]['y'] == PlayerT.state[i2]['y']:
+                if self.state[0]['x'] == PlayerT.state[i2]['x'] and self.state[0]['y'] == PlayerT.state[i2]['y']:
                     return False
         return True
 
